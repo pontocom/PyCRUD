@@ -1,6 +1,8 @@
 import mariadb
 from prettytable import PrettyTable
 
+# Database connection parameters
+# This should be changed to the specific parameters of your database configuration
 conn_params = {
     "user": "",
     "password": "",
@@ -9,6 +11,7 @@ conn_params = {
 }
 
 
+# This is used to create a new user on the database
 def create_user():
     username = input("Enter username: ")
     password = input("Enter password: ")
@@ -23,6 +26,7 @@ def create_user():
     connection.close()
 
 
+# This is used to list all the users on the database
 def read_users():
     table = PrettyTable()
     table.field_names = ["Uid", "Username", "Password", "Name", "Address"]
@@ -44,6 +48,7 @@ def read_users():
     connection.close()
 
 
+# This used to update a record on the database
 def update_user():
     uid = input("Select user to update: ")
     connection = mariadb.connect(**conn_params)
@@ -73,6 +78,7 @@ def update_user():
     connection.close()
 
 
+# This is used to delete a record from the database
 def delete_user():
     uid = input("User id to delete: ")
     connection = mariadb.connect(**conn_params)
@@ -83,6 +89,7 @@ def delete_user():
     connection.close()
 
 
+# Displays the menu to the end-user
 def print_menu():
     print("-------------------")
     print("|     M e n u     |")
