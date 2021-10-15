@@ -1,0 +1,9 @@
+CREATE DATABASE crud;
+
+CREATE TABLE utilizador (
+  uid INTEGER PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(32) NOT NULL,
+  password VARCHAR(32) NOT NULL,
+  nome VARCHAR(64),
+  morada VARCHAR (128)
+);
